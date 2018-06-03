@@ -25,7 +25,7 @@ class Solution {
             }
             if(sb.charAt(i)!=sb.charAt(i+1))
             {
-                res=res+count+sb.charAt(i);
+                res=res+String.valueOf(count)+sb.charAt(i);
                 count=0;
             }
            
