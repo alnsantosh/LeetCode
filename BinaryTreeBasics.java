@@ -7,7 +7,24 @@ static int height(Node root) {
         return (left>right)?left:right;
             
     }
-    
+///////////////
+/*
+    class Node 
+    	int data;
+    	Node left;
+    	Node right;
+	*/
+	static int height(Node root) { //Alternate way to find height of binary tree
+      	// Write your code here.
+        int left=0,right=0;
+        if(root.left!=null)
+           left=1+height(root.left);
+        if(root.right!=null)
+            right=1+height(root.right);
+        return (left>right)?left:right;
+            
+    }
+//////////////    
     void preOrder(Node root) {
     if(root!=null)
     {
@@ -18,3 +35,32 @@ static int height(Node root) {
     
 
 }
+//////////////
+/* 
+    
+    class Node 
+    	int data;
+    	Node left;
+    	Node right;
+	*/
+	void topView(Node root) {
+        Node temp=root;
+        Stack<Node> s=new Stack<>();
+        while(temp!=null)
+        {
+            s.push(temp);
+            temp=temp.left;
+        }
+        //System.out.println(s.size());
+        while(!s.isEmpty())
+        {
+            Node tmp=s.pop();
+            System.out.print(tmp.data+" ");
+        }
+        root=root.right;
+        while(root!=null)
+        {
+            System.out.print(root.data+" ");
+            root=root.right;
+        }
+    }
