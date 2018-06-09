@@ -64,3 +64,41 @@ static int height(Node root) {
             root=root.right;
         }
     }
+
+////////////////////////////////
+	/* 
+    
+    class Node 
+    	int data;
+    	Node left;
+    	Node right;
+	*/
+	void levelOrder(Node root) { //For the level order traversal, we can use queue or list, and keep pushing the left and right childs of each node and then removing that node from the queue/list. This is for left to right level order traversal
+        List<Node> l=new ArrayList<>();
+        l.add(root);
+        while(l.size()!=0)
+        {
+            
+            Node temp=l.remove(0);
+            System.out.print(temp.data+" ");
+            if(temp.left!=null)
+            {
+                l.add(temp.left);
+            }
+            if(temp.right!=null)
+            {
+                l.add(temp.right);
+            }
+            
+        }
+        
+        
+    }
+
+//Complexity time -
+//Complexity space- 
+
+
+///////////////////////////
+
+
