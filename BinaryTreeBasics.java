@@ -101,4 +101,51 @@ static int height(Node root) {
 
 ///////////////////////////
 
+ /* Node is defined as :
+ class Node 
+    int data;
+    Node left;
+    Node right;
+    
+    */
+
+static Node Insert(Node root,int value) {
+    Node n=new Node();
+    n.left=null;
+    n.right=null;
+    n.data=value;
+    if(root!=null)
+    {
+        if(value>root.data)// Based on value, go left or right
+        {
+            if(root.right!=null)//If there is a right child to the root, then just call the same funstion with that child as input
+                Insert(root.right,value);
+            else{
+                root.right=n;//Connect the new node as child to the node if the node does not have any right child previously
+            }
+        }
+        else
+        {
+            if(root.left!=null)
+                Insert(root.left,value);
+            else{
+                root.left=n;
+            }
+        }
+    }
+    else{ //If root itself is null, just create a new node and return that node
+        return n;  
+    }
+    return root;	
+    }
+
+//Complexity
+//time- 
+//space- 
+
+///////////////////////////
+
+
+
+
 
