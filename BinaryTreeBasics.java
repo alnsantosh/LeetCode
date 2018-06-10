@@ -178,5 +178,35 @@ void decode(String S ,Node root)// Decoding based on Huffman tree
 
 
 
+ /* Node is defined as :
+ class Node 
+    int data;
+    Node left;
+    Node right;
+    
+    */
+
+static Node lca(Node root,int v1,int v2)// least common ancestor
+    {
+    Node temp=root;
+    if(temp.data>v1 && temp.data>v2)
+    {
+        return lca(temp.left,v1,v2);
+    }
+    else if(temp.data<v1 && temp.data<v2)
+    {
+        return lca(temp.right,v1,v2);
+    }
+    else
+    {
+        return temp;
+    }
+    	
+    }
+
+//////////////////
+
+
+
 
 
