@@ -145,6 +145,37 @@ static Node Insert(Node root,int value) {
 
 ///////////////////////////
 
+/*  
+	class Node
+		public  int frequency; // the frequency of this tree
+    	public  char data;
+    	public  Node left, right;
+    
+*/ 
+void decode(String S ,Node root)// Decoding based on Huffman tree
+    {
+    String res="";
+    Node temp=root;
+    for(int i=0;i<S.length();i++)
+    {
+        if(S.charAt(i)=='0'){
+            temp=temp.left;
+        }
+        else{
+            temp=temp.right;
+        }
+        if(temp.left==null && temp.right==null)
+        {
+            res+=String.valueOf(temp.data);
+            temp=root;
+        }
+    }
+    System.out.println(res);
+    }
+
+///////////////////
+
+
 
 
 
