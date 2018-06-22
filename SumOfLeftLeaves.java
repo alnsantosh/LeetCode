@@ -44,3 +44,37 @@ class Solution {
 Time Complexity - O(n) - dfs approach
 Space Complexity - O(h) 
 */
+
+
+//-----------------------------Other ways of doing the above problem
+public int sumOfLeftLeaves(TreeNode root) {
+    if(root == null) return 0;
+    int ans = 0;
+    if(root.left != null) {
+        if(root.left.left == null && root.left.right == null) ans += root.left.val;
+        else ans += sumOfLeftLeaves(root.left);
+    }
+    ans += sumOfLeftLeaves(root.right);
+    
+    return ans;
+}
+
+/*Nice way to use a boolean variable to determine if in left subtree or right subtree. Instead of this approach, we can also write another function and include a boolean variable which does the same thing.*/
+
+class Solution {
+    boolean left ;
+    public int sumOfLeftLeaves(TreeNode root) {
+        int sum = 0;
+        if(root == null)
+            return 0;
+        if(root.left == null && root.right == null && left)
+            return root.val;
+        left = true;
+        sum += sumOfLeftLeaves(root.left);
+        left = false;
+        sum+= sumOfLeftLeaves(root.right);
+        return sum;
+        
+    }
+}
+
