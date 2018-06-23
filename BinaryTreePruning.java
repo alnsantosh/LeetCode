@@ -38,6 +38,7 @@ Note:
 
 */
 
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -85,3 +86,49 @@ class Solution {
 Time Complexity - O(n)
 Space Complexity - O(h)
 */
+
+/*
+Another way of doing it, though sane time and space complexity, the solution is little easy to understand
+*/
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode pruneTree(TreeNode root) {
+        if(root==null)
+            return null;
+        else
+        {
+            logic(root);
+        }
+        return root;
+    }
+    public boolean logic(TreeNode root)
+    {
+        if(root==null)
+            return false;
+        // if(root.left==null && root.right==null && root.val==0)
+        //     return false;
+        else
+        {
+            boolean left=true,right=true;
+            //if(root.left!=null)
+                left=logic(root.left);
+            //if(root.right!=null)
+                right=logic(root.right);
+            if(!left)
+                root.left=null;
+            if(!right)
+                root.right=null;
+            return (left||right) || root.val==1;
+            
+        }
+    }
+}
