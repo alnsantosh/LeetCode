@@ -66,6 +66,8 @@ class Solution {
     }
 }
 /*
-Time Complexity - 
+Time Complexity - O(m*n) = O(26*n)=O(n)
+m=no of elements that can be present in stack
+n=no of elements(characters) in string
 Space Complexity - 
 */
