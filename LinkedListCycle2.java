@@ -1,4 +1,7 @@
 /*
+this link might help
+https://www.youtube.com/watch?v=zbozWoMgKW0
+
 142. Linked List Cycle II
 
 https://leetcode.com/problems/linked-list-cycle-ii/description/
