@@ -57,6 +57,6 @@ class Solution {
     }
 }
 /*
-Time Complexity - O(n)
-Space Complexity - O(n)
+Time Complexity - O(n^2) - n for recursive call and another n since I am searching for the element in the array
+Space Complexity - O(h) where h varies from logn to n.
 */
