@@ -39,7 +39,7 @@ class Solution {
             head=head.next;
             if(head==null)
             {
-                if(i<n)
+                if(i<n)//edge case - When the n is equal to the length of linked list, then at the end of this for loop, head will point to null. In that case, we have to remove the actual head of the linked list and make the next one as the head.
                     return head2.next;
             }
         }
