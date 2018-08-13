@@ -44,6 +44,10 @@ class Solution {
     
 }
 /*
-Time Complexity - O(n)
+Time Complexity - O(3.11^n)
+Each slot will have k possible values. If there are n slots, then the complexity becomes k^n
+In this case, numbers 2-7 have 3 possible values, 8-9 have 4 possible values
+i.e., (5*3+2*4)/7=3.11 possible values in each slot
+Since there are n slots, O(3.11^n)
 Space Complexity - O(n) where n is length of digits
 */
