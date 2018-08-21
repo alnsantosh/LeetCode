@@ -85,5 +85,5 @@ class Solution {
 }
 /*
 Time Complexity - O(n)
-Space Complexity - O(n) - Stack is used
+Space Complexity - O(n) - Stack is used and the size will be atmost n where n is length of array
 */
