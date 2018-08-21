@@ -45,7 +45,9 @@ Note:
 The size of the input list will be between 1 and 1000.
 Every integer represented in the list will be between -30000 and 30000.
 */
-
+/*
+Idea - Simple stack implementation. 
+*/
 class Solution {
     public int calPoints(String[] ops) {
         Stack<Integer> s=new Stack<>();
