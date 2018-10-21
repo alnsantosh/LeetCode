@@ -63,6 +63,6 @@ class Solution {
 }
 
 /*
-Time Complexity - O()
-Space Complexity - O(n) - In case of skewed matrix
+Time Complexity - O(n^2) - For each of the node we are potentially searching all the other nodes and repeating same for all the nodes
+Space Complexity - O(n) - In case of skewed matrix. In general O(h)
 */
