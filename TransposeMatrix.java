@@ -25,24 +25,52 @@ Note:
 1 <= A[0].length <= 1000
 */
 /*
-Idea - Iterate over Upper Traingular Matrix and swap every value with the corresponding value in the lower triangular matrix
+Idea - Create a new array with dimensions based on A. Now traverse through all the element in A and copy those values in appropriate position in res
 */
 class Solution {
     public int[][] transpose(int[][] A) {
         int m=A.length;
         int n=A[0].length;
+        int[][] res=new int[n][m];
         for(int i=0;i<m;i++)
         {
-            for(int j=i+1;j<n;j++)
+            for(int j=0;j<n;j++)
             {
-                int temp=A[i][j];
-                A[i][j]=A[j][i];
-                A[j][i]=temp;
+                res[j][i]=A[i][j];
             }
         }
-        return A;
+        return res;
     }
 }
+/*
+Time Complexity - O(m*n)
+Space Complexity - O(m*n)
+*/
+
+
+//The following code would be correct if the m=n. However when m!=n, it will throw array out of bounds exception
+
+/*
+Idea - Iterate over Upper Traingular Matrix and swap every value with the corresponding value in the lower triangular matrix
+*/
+
+// class Solution {
+//     public int[][] transpose(int[][] A) {
+//         int m=A.length;
+//         int n=A[0].length;
+//         for(int i=0;i<m;i++)
+//         {
+//             for(int j=i+1;j<n;j++)
+//             {
+//                 int temp=A[i][j];
+//                 A[i][j]=A[j][i];
+//                 A[j][i]=temp;
+//             }
+//         }
+//         return A;
+//     }
+// }
+
 /*
 Time Complexity - O(m*n)
 Space Complexity - O(1)
