@@ -27,5 +27,5 @@ class Solution {
 }
 /*
 Time Complexity: O(nlogn+nm) where n=length of products array,m=length of the string searchWord, nlogn because products array is sorted and nm since we have two for loops
-Space Complexity: O(m) if including the res list into the space complexity
+Space Complexity: O(m) if including the res list into the space complexity, else O(1)
 */
